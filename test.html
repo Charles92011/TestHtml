@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Test</title>
+        <meta name="author" content="charles.johnson@civi.com" />
+		<style>
+			.hidden {display: none;}
+		</style>
+    </head>
+    <body>
+		<p>
+			<button id="btnTest">Test</button>
+		</p>
+		<p><span id="spanLog">log...</span></p>
+		<script type="application/javascript">
+		
+			$listen("btnTest", "click", clickTest);
+			function clickTest(event) {
+				
+			}
+
+			// Utility Functions
+			function $(id) {return document.getElementById(id);}
+			function $hide(id) {$(id).classList.add('hidden');}
+			function $show(id) {$(id).classList.remove('hidden');}
+			function $disable(id) {$(id).disabled = true;}
+			function $enable(id) {$(id).disabled = false;}
+			function $listen(id, toWhat, how) {$(id).addEventListener(toWhat, how, true);}
+			function $unlisten(id, toWhat, how) {$(id).removeEventListener(toWhat, how, true);}
+			function log(message) {
+				const spanLog = document.getElementById('spanLog');
+				spanLog.innerHTML = spanLog.innerHTML + ('<br/>' + message);
+			}
+
+		
+		</script>
+	</body>
+</html>
